@@ -21,9 +21,11 @@ class WorkReportTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testCalendarDataManager_lastDayForMonth() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertEqual(28, CalendarDataManager.sharedInstance.lastDayForMonth(month: 2, year: 2018))
+        XCTAssertEqual(31, CalendarDataManager.sharedInstance.lastDayForMonth(month: 1, year: 2018))
     }
     
     func testPerformanceExample() {

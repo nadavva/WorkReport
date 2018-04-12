@@ -9,6 +9,20 @@
 import Foundation
 import EventKit
 
+
+extension Date {
+    func startOfMonth() -> Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+    }
+    
+    func endOfMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+    }
+}
+
+//print(Date().startOfMonth())     // "2018-02-01 08:00:00 +0000\n"
+//print(Date().endOfMonth())       // "2018-02-28 08:00:00 +0000\n"
+
 final class CalendarDataManager {
     
     static let sharedInstance = CalendarDataManager()
@@ -16,13 +30,16 @@ final class CalendarDataManager {
     private init() {
     }
     
-    func datesForMonth(month : Int, year: Int) -> (start: Date, end: Date) {
+    func lastDayForMonth(month : Int, year: Int) -> Int {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
         let start = String(year) + "/" + String(month) + "/01 00:00" //"2016/10/08 00:00"
         let startDateTime : Date = formatter.date(from: start)!
         
-        
+        let last = startDateTime.endOfMonth()
+        let day = Calendar.current.component(.day, from: last)
+        print("Last day for date ",month, "/",year," = ",day)
+        return day
     }
     
     func initCalendar (){
@@ -46,7 +63,7 @@ final class CalendarDataManager {
         }
     }
     
-    func readEventsForCalendarWith(title : String = "Work", sourceTitle : String = "iCloud", fromDate : NSDate, toDate: NSDate) {
+    func readEvents(title : String = "Work", sourceTitle : String = "iCloud") {
         let eventStore = EKEventStore()
         let calendars = eventStore.calendars(for: .event)
         
