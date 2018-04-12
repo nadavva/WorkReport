@@ -15,6 +15,7 @@
 		D301BA55207CC71C0078D861 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D301BA53207CC71C0078D861 /* LaunchScreen.storyboard */; };
 		D301BA60207CC71C0078D861 /* WorkReportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301BA5F207CC71C0078D861 /* WorkReportTests.swift */; };
 		D301BA6B207CC71C0078D861 /* WorkReportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301BA6A207CC71C0078D861 /* WorkReportUITests.swift */; };
+		D301BA7D207CCD7C0078D861 /* CalendarDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301BA7C207CCD7C0078D861 /* CalendarDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D301BA66207CC71C0078D861 /* WorkReportUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkReportUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D301BA6A207CC71C0078D861 /* WorkReportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkReportUITests.swift; sourceTree = "<group>"; };
 		D301BA6C207CC71C0078D861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D301BA7C207CCD7C0078D861 /* CalendarDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		D301BA47207CC71A0078D861 /* WorkReport */ = {
 			isa = PBXGroup;
 			children = (
+				D301BA79207CCC620078D861 /* Logic */,
 				D301BA48207CC71A0078D861 /* AppDelegate.swift */,
 				D301BA4A207CC71A0078D861 /* FirstViewController.swift */,
 				D301BA4C207CC71A0078D861 /* SecondViewController.swift */,
@@ -126,6 +129,14 @@
 				D301BA6C207CC71C0078D861 /* Info.plist */,
 			);
 			path = WorkReportUITests;
+			sourceTree = "<group>";
+		};
+		D301BA79207CCC620078D861 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				D301BA7C207CCD7C0078D861 /* CalendarDataManager.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				D301BA4D207CC71A0078D861 /* SecondViewController.swift in Sources */,
 				D301BA49207CC71A0078D861 /* AppDelegate.swift in Sources */,
 				D301BA4B207CC71A0078D861 /* FirstViewController.swift in Sources */,
+				D301BA7D207CCD7C0078D861 /* CalendarDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
