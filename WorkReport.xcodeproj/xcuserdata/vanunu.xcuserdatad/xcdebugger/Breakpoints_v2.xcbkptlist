@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WorkReport/Logic/CalendarDataManager.swift"
-            timestampString = "545226395.547918"
+            timestampString = "545664663.149574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "lastDayForMonth(month:year:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WorkReport/Logic/CalendarDataManager.swift"
-            timestampString = "545226395.547986"
+            timestampString = "545664663.149951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "readEvents(title:sourceTitle:)"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "readCalendarEvents(forMonth:andYear:title:sourceTitle:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,45 +42,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WorkReportTests/WorkReportTests.swift"
-            timestampString = "545226395.548038"
+            timestampString = "545664663.150218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "testExample()"
+            landmarkName = "testCalendarDataManager_lastDayForMonth()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WorkReportTests.WorkReportTests.testExample() -&gt; ()"
-                  moduleName = "WorkReportTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vanunu/Developer/RepoGHE/WorkReport/WorkReportTests/WorkReportTests.swift"
-                  timestampString = "545226398.095291"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "372">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #4 : @autoclosure () throws -&gt; Swift.Int in WorkReportTests.WorkReportTests.testExample() -&gt; ()"
-                  moduleName = "WorkReportTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vanunu/Developer/RepoGHE/WorkReport/WorkReportTests/WorkReportTests.swift"
-                  timestampString = "545226398.099146"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WorkReport/Logic/CalendarDataManager.swift"
+            timestampString = "545664663.150268"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "readCalendarEvents(forMonth:andYear:title:sourceTitle:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WorkReport/Logic/CalendarDataManager.swift"
+            timestampString = "545664663.150498"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "readCalendarEvents(forMonth:andYear:title:sourceTitle:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WorkReport/Logic/CalendarDataManager.swift"
+            timestampString = "545664663.150722"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "readCalendarEvents(forMonth:andYear:title:sourceTitle:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

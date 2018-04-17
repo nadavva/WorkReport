@@ -20,8 +20,6 @@ extension Date {
     }
 }
 
-//print(Date().startOfMonth())     // "2018-02-01 08:00:00 +0000\n"
-//print(Date().endOfMonth())       // "2018-02-28 08:00:00 +0000\n"
 
 final class CalendarDataManager {
     
@@ -42,18 +40,18 @@ final class CalendarDataManager {
         return day
     }
     
-    func initCalendar (){
+    func initCalendarWith(month : Int, year: Int){
         let eventStore = EKEventStore()
         
         switch EKEventStore.authorizationStatus(for: .event) {
         case .authorized:
-            readEvents()
+            readCalendarEvents(forMonth: month, andYear: year)
         case .denied:
             print("Access denied")
         case .notDetermined:
             eventStore.requestAccess(to: .event, completion: { (granted: Bool, NSError) -> Void in
                 if granted {
-                    self.readEvents()
+                    self.readCalendarEvents(forMonth: month, andYear: year)
                 }else{
                     print("Access denied")
                 }
@@ -63,7 +61,7 @@ final class CalendarDataManager {
         }
     }
     
-    func readEvents(title : String = "Work", sourceTitle : String = "iCloud") {
+    func readCalendarEvents(forMonth : Int, andYear: Int, title : String = "Work", sourceTitle : String = "iCloud") {
         let eventStore = EKEventStore()
         let calendars = eventStore.calendars(for: .event)
         
@@ -71,24 +69,41 @@ final class CalendarDataManager {
             if (calendar.title == title &&
                 calendar.source.title == sourceTitle) {
                 
-                let oneMonthAgo = NSDate(timeIntervalSinceNow: -30*24*3600)
-                let oneMonthAfter = NSDate(timeIntervalSinceNow: +30*24*3600)
-                let calendarArray: [EKCalendar] = [calendar]
-                let predicate2 = eventStore.predicateForEvents(withStart: oneMonthAgo as Date, end : oneMonthAfter as Date, calendars: calendarArray)
+                // Initialize Date components
+                var c = DateComponents()
+                c.year = andYear
+                c.month = forMonth
+                c.day = 1
                 
-                print("startDate:\(oneMonthAgo) endDate:\(oneMonthAfter)")
+                // Get NSDate given the above date components
+                let fromDate = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c)
+                print(fromDate ?? "") //Convert String to Date
+                
+                c = DateComponents()
+                c.year = andYear
+                c.month = forMonth
+                c.day = self.lastDayForMonth(month: forMonth, year: andYear)
+                let toDate = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c)
+                
+                print(toDate ?? "") //Convert String to Date
+                
+                //fromDate = Date(timeIntervalSinceNow: -30*24*3600)
+                //toDate = Date(timeIntervalSinceNow: +30*24*3600)
+                let calendarArray: [EKCalendar] = [calendar]
+                let predicate2 = eventStore.predicateForEvents(withStart: fromDate!, end : toDate!, calendars: calendarArray)
+                
+                print("startDate:\(fromDate) endDate:\(toDate)")
                 let eV = eventStore.events(matching: predicate2) as [EKEvent]?
                 
                 if eV != nil {
                     for i in eV! {
-                        print("Title  \(i.title)" )
-                        print("stareDate: \(i.startDate)" )
-                        print("endDate: \(i.endDate)" )
+                        let event : EKEvent = i
+                        print("Title  \(event.title)" )
+                        print("stareDate: \(event.startDate)" )
+                        print("endDate: \(event.endDate)" )
                         
                         if i.title == "Test Title" {
                             print("YES" )
-                            // Uncomment if you want to delete
-                            //eventStore.removeEvent(i, span: EKSpanThisEvent, error: nil)
                         }
                     }
                 }
@@ -110,5 +125,7 @@ final class CalendarDataManager {
         }
         return nil
     }
+    
+
 }
 
