@@ -76,37 +76,40 @@ final class CalendarDataManager {
                 c.day = 1
                 
                 // Get NSDate given the above date components
+                // TODO: need to create the date in the current timeZone, from current code I get
                 let fromDate = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c)
-                print(fromDate ?? "") //Convert String to Date
                 
                 c = DateComponents()
                 c.year = andYear
                 c.month = forMonth
-                c.day = self.lastDayForMonth(month: forMonth, year: andYear)
+                
+                // calculate month length
+                let daysInMonth = self.lastDayForMonth(month: forMonth, year: andYear)
+                c.day = daysInMonth
                 let toDate = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c)
                 
                 print(toDate ?? "") //Convert String to Date
                 
-                //fromDate = Date(timeIntervalSinceNow: -30*24*3600)
-                //toDate = Date(timeIntervalSinceNow: +30*24*3600)
+
                 let calendarArray: [EKCalendar] = [calendar]
                 let predicate2 = eventStore.predicateForEvents(withStart: fromDate!, end : toDate!, calendars: calendarArray)
                 
-                print("startDate:\(fromDate) endDate:\(toDate)")
+                print("Collecting events - startDate:\(fromDate), endDate:\(toDate)")
                 let eV = eventStore.events(matching: predicate2) as [EKEvent]?
                 
                 if eV != nil {
+                    // we have data
+                    let results = MonthResults(month: forMonth, year: andYear, daysInMonth: daysInMonth)
                     for i in eV! {
+                        
                         let event : EKEvent = i
                         print("Title  \(event.title)" )
-                        print("stareDate: \(event.startDate)" )
-                        print("endDate: \(event.endDate)" )
-                        
-                        if i.title == "Test Title" {
-                            print("YES" )
-                        }
+                        let eventDay = NSCalendar.current.component(.day, from: event.startDate)
+                        results.addEvent(event: event, forDay: eventDay)
                     }
                 }
+                
+                print("Done with events")
             }
         }
         

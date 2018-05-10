@@ -16,6 +16,7 @@
 		D301BA60207CC71C0078D861 /* WorkReportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301BA5F207CC71C0078D861 /* WorkReportTests.swift */; };
 		D301BA6B207CC71C0078D861 /* WorkReportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301BA6A207CC71C0078D861 /* WorkReportUITests.swift */; };
 		D301BA7D207CCD7C0078D861 /* CalendarDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301BA7C207CCD7C0078D861 /* CalendarDataManager.swift */; };
+		D30F363F2099DB0D00D08427 /* MonthResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30F363E2099DB0D00D08427 /* MonthResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D301BA6A207CC71C0078D861 /* WorkReportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkReportUITests.swift; sourceTree = "<group>"; };
 		D301BA6C207CC71C0078D861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D301BA7C207CCD7C0078D861 /* CalendarDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataManager.swift; sourceTree = "<group>"; };
+		D30F363E2099DB0D00D08427 /* MonthResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				D301BA7C207CCD7C0078D861 /* CalendarDataManager.swift */,
+				D30F363E2099DB0D00D08427 /* MonthResults.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D301BA4D207CC71A0078D861 /* SecondViewController.swift in Sources */,
+				D30F363F2099DB0D00D08427 /* MonthResults.swift in Sources */,
 				D301BA49207CC71A0078D861 /* AppDelegate.swift in Sources */,
 				D301BA4B207CC71A0078D861 /* FirstViewController.swift in Sources */,
 				D301BA7D207CCD7C0078D861 /* CalendarDataManager.swift in Sources */,

@@ -13,7 +13,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        CalendarDataManager.sharedInstance.initCalendarWith(month: 3,year: 2018)
+        CalendarDataManager.sharedInstance.initCalendarWith(month: 4,year: 2018)
         
     }
 
